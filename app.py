@@ -13,7 +13,13 @@ cors=CORS(app,resources={
         "origins":"*"
     }
 })
+@app.route('/',methods=['GET'])
+def ping():
 
+    return jsonify(
+                
+                mensaje="Pong"
+            )
 @app.route('/',methods=['POST'])
 def agregarinteresado():
 

@@ -1,0 +1,5 @@
+Flask
+Flask-CORS
+coveralls
+validate_email
+py3DNS

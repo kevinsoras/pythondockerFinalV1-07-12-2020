@@ -2,11 +2,8 @@ FROM alpine:3.10
 
 # nuevo
 # instalando dependencias
-RUN apk update && \
-    apk add --virtual build-deps gcc python3-dev musl-dev && \
-    apk add postgresql-dev && \
-    apk add netcat-openbsd && \
-    pip3 install --upgrade pip 
+RUN apk add --no-cache python3-dev \
+    && pip3 install --upgrade pip    
 
 
 
@@ -17,6 +14,7 @@ WORKDIR /usr/src/app
 # agregando app
 COPY . /usr/src/app
 
+RUN pip 3 --no-cache-dir install -r requiremenents.txt
 # nuevo
 # ejecutar server
 CMD ["python3","/usr/src/app/app.py"]
