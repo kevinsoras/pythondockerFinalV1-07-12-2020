@@ -14,7 +14,7 @@ WORKDIR /usr/src/app
 # agregando app
 COPY . /usr/src/app
 
-RUN pip 3 --no-cache-dir install -r requiremenents.txt
+RUN pip3 --no-cache-dir install -r requiremenents.txt
 # nuevo
 # ejecutar server
 CMD ["python3","/usr/src/app/app.py"]
